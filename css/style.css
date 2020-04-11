@@ -1,0 +1,74 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #353535;
+  overflow: hidden;
+
+}
+
+.container {
+  margin: 0 20px;
+  background-color:#353535;
+}
+
+/*components*/
+
+.game {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+}
+
+.game header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.game .lives {
+  flex: 0.7;
+  
+  
+  
+}
+
+.canvas-container {
+  flex: 1;
+  
+}
+
+.newgame {
+border: none;
+background-color: #353535;
+font-size: 1.5rem;
+color: white;
+margin: 15%;
+
+
+
+
+
+}
+
+.splashscreen {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    
+}
+
+.lives {
+color: white;
+font-family: Helvetica, sans-serif;
+}
+
+.score {
+    color: white;
+    font-family: Helvetica, sans-serif;
+}
+
