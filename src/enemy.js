@@ -6,7 +6,7 @@ class Enemy {
     this.ctx = this.canvas.getContext("2d");
 
     this.size = 20;
-    this.x = this.canvas.width+this.size;
+    this.x = this.canvas.width + this.size;
     this.y = y;
     this.speed = speed;
   }
@@ -14,10 +14,11 @@ class Enemy {
   draw() {
     this.ctx.fillStyle = "blue";
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    //this.ctx.drawImage(img, this.x, this.y, this.size, this.size * 2);
   }
 
   updatePosition() {
-    this.x = this.x - this.speed; 
+    this.x = this.x - this.speed;
   }
 
   isInsideScreen() {

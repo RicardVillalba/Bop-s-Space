@@ -57,7 +57,19 @@ function removeScreen() {
 }
 
 // game over screen
-function createGameOverScreen() {
+function createGameOverScreen(score) {
+  gameOverScreen = buildDom(`
+  <main>
+    <h1>Game Over</h1>
+    <p>Your score: <span> ${score} </span></p>
+    <h3>Do you want to try again?</h3>
+    <button>yes</button>
+    <button>no</button>
+  </main>
+  `);
+  var restartButton = gameOverScreen.querySelector("button");
+  restartButton.addEventListener("click", startGame);
+  document.body.appendChild(gameOverScreen);
 }
 
 function removeGameOverScreen() {}
@@ -73,7 +85,10 @@ function startGame() {
   game.start();
 }
 
-function endGame() {}
+function endGame(score) {
+  removeScreen();
+  createGameOverScreen(score);
+}
 
 // Run the function createSplashScreen once all the resources are loaded.
 window.addEventListener("load", createSplashScreen);

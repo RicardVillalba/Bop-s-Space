@@ -95,11 +95,38 @@ class Game {
       if (this.gameIsOver === false) {
         requestAnimationFrame(loop); //start the animation loop
       }
+      // update game status
+      this.updateGameStats();
     }.bind(this);
     loop(); // initial invocation
   }
 
-  checkCollisons() {}
+  checkCollisons() {
+    this.enemies.forEach((enemy) => {
+      if (this.player.didCollide(enemy)) {
+        this.player.removeLife();
+        console.log("player lives", this.player.lives);
 
-  updateGameStats() {}
+        enemy.x = -1 * enemy.size;
+
+        if (this.player.lives <= 0) {
+          this.gameOver();
+        }
+      }
+    });
+  }
+
+  gameOver(score) {
+    //don't accept this.score
+    this.gameIsOver = true;
+    endGame();
+  }
+
+  updateGameStats() {
+    //score
+    this.score + 5;
+    // console.log(this.score);
+    this.livesElement.innerHTML = this.player.lives;
+    this.scoreElement.innerHTML = this.score;
+  }
 }

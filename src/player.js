@@ -21,7 +21,6 @@ class Player {
   }
 
   setDirection(direction) {
-    debugger;
     if (direction === "up") this.direction = -1;
     else if (direction === "down") this.direction = 1;
   }
@@ -49,11 +48,33 @@ class Player {
   }
 
   draw() {
-    this.ctx.fillStyle = "blue";
+    this.ctx.fillStyle = "white";
 
     // ctx.fillRect (x , y, with, height)
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
 
-  didCollide() {}
+  didCollide(enemy) {
+    const playerLeft = this.x;
+    const playerRight = this.x + this.size;
+    const playerTop = this.y;
+    const playerBottom = this.y + this.size;
+
+    const enemyLeft = enemy.x;
+    const enemyRight = enemy.x + enemy.size;
+    const enemyTop = enemy.y;
+    const enemyBottom = enemy.y + enemy.size;
+
+    const crossLeft = enemyLeft <= playerRight && enemyLeft >= playerLeft;
+    const crossRight = enemyRight >= playerLeft && enemyRight <= playerRight;
+
+    const crossTop = enemyTop <= playerBottom && enemyTop >= playerTop;
+    const crossBottom = enemyBottom >= playerTop && enemyBottom <= playerBottom;
+
+    if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+      return true;
+    } else {
+      return false;
+    }
+  } //true or false if player touch enemy
 }
