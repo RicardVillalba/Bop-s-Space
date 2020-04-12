@@ -9,7 +9,7 @@ class Player {
     this.size = 100;
     this.x = 50;
     this.y = this.canvas.height / 2;
-    
+
     this.direction = 0; //0 not moving // -1 moving up // 1 moving down
     this.speed = 5;
 
@@ -21,6 +21,7 @@ class Player {
   }
 
   setDirection(direction) {
+    debugger;
     if (direction === "up") this.direction = -1;
     else if (direction === "down") this.direction = 1;
   }
@@ -32,12 +33,15 @@ class Player {
     //player's limit of screen in y
     if (playerBottom > screenBootom) this.setDirection("up");
     else if (playerTop < screenTop) this.setDirection("down");
-    this.updatePosition();
   }
 
   updatePosition() {
     //update the player possition
     this.y = this.y + this.direction * this.speed;
+    this.playerTop = this.y;
+    this.playerBottom = this.y + this.size;
+    this.screenTop = 0; // y = 0
+    this.screenBootom = this.canvas.height;
   }
 
   removeLife() {

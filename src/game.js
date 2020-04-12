@@ -29,28 +29,75 @@ class Game {
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
 
-    this.player = new player(this.canvas, 5);
+    this.player = new Player(this.canvas, 5);
 
     // event listener for moving the player
     function handleKeyDown(event) {
-        if(event.key === "ArrowUp") {
-            this.player.setDirection('up');
-        }
-        else if (event.key === "ArrowDown") {
-            this.player.setDirection('down');
-        }
+      if (event.key === "ArrowUp") {
+        //console.log("up");
+        this.player.setDirection("up");
+      } else if (event.key === "ArrowDown") {
+        //console.log("down");
+        this.player.setDirection("down");
+      }
     }
-
-    document.addEventListener('keydown', handleKeyDown)
-
-
-     this.player.draw();
+    const boundHandleKeyDown = handleKeyDown.bind(this);
+    document.addEventListener("keydown", boundHandleKeyDown);
 
     //Starts  the canvas  request animation frame loop
     this.startLoop();
   }
 
-  startLoop() {}
+  startLoop() {
+    const loop = function () {
+      //console.log("in loop");
+
+      // update the state of player and enemies
+      // create new enemies randomly
+      if (Math.random() > 0.96) {
+        const randomHeighPos = this.canvas.height * Math.random();
+        const newEnemy = new Enemy(this.canvas, randomHeighPos, 5);
+        //console.log("enemy");
+
+        this.enemies.push(newEnemy);
+      }
+      // check if player had hit any enemy
+      this.checkCollisons();
+
+      // update the player position
+      this.player.handleScreenCollision();
+      this.player.updatePosition();
+
+      // move all enemies
+      // check if enemy is out of screen
+      const enemiesOnScreen = this.enemies.filter(function (enemy) {
+        enemy.updatePosition();
+        const isInsideScreen = enemy.isInsideScreen();
+
+        return isInsideScreen;
+      });
+
+      this.enemies = enemiesOnScreen;
+
+      // clear the canvas
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      // paint the canvas
+      // draw the player
+      this.player.draw();
+      // draw the enemies
+      this.enemies.forEach((enemy) => {
+        enemy.draw();
+      });
+
+      // terminate the loop if game is over
+
+      if (this.gameIsOver === false) {
+        requestAnimationFrame(loop); //start the animation loop
+      }
+    }.bind(this);
+    loop(); // initial invocation
+  }
 
   checkCollisons() {}
 
