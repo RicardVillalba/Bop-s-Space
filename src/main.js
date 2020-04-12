@@ -16,6 +16,7 @@ function createSplashScreen() {
     <main class="splashscreen">
     <button class="newgame">New Game</button>
     </main> 
+   
 `);
   document.body.appendChild(splashScreen);
 
