@@ -45,10 +45,9 @@ body {
   width: 100%;
   display: flex;
   align-items: flex-end;
-  flex-direction: row-reverse;
+  flex-direction: column;
   
 }
-
 
 
 .newgame {
@@ -57,19 +56,19 @@ background-color: Transparent;
 background-repeat:no-repeat;
 font-size: 1.5rem;
 color: white;
-margin: 15%;
-background-image: url(img/IMG_1547.PNG);
+margin: 3%;
+
 }
 
 img {
   max-width: 150%;
-  max-height: 50%;
+  max-height: 100%;
   
 }
 .spaceship {
   background-color: Transparent;
   background-repeat:no-repeat;
-  height: 100%;
+  height: 20%;
   width: 100%;
   border: silver;
   }

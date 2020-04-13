@@ -17,11 +17,15 @@ function createSplashScreen() {
     <button class="newgame">New Game</button>
 
     <div id="splashScreensound">
-      <iframe src="sound/bill-evans-trio-spring-is-here.mp3">
-      </iframe> 
+      <audio
+        autoplay
+        src="../sound/bill-evans-trio-spring-is-here.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
     </div>
   
-      <img src="img/IMG_1547.PNG"></img> 
+      <img src="../img/IMG_1547.PNG"/>
    
     </main> 
    
