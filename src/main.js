@@ -19,13 +19,13 @@ function createSplashScreen() {
     <div id="splashScreensound">
       <audio
         autoplay
-        src="../sound/bill-evans-trio-spring-is-here.mp3">
+        src="sound/bill-evans-trio-spring-is-here.mp3">
         Your browser does not support the
         <code>audio</code> element.
       </audio>
     </div>
   
-      <img src="../img/IMG_1547.PNG"/>
+      <img src="img/IMG_1547.PNG"/>
    
     </main> 
    
