@@ -29,7 +29,7 @@ class Game {
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
 
-    this.player = new Player(this.canvas, 500);
+    this.player = new Player(this.canvas, 3);
     console.log(this.player);
     // event listener for moving the player
     function handleKeyDown(event) {
@@ -71,7 +71,6 @@ class Game {
       }
       // create a new bullet
 
-
       // check if player had hit any enemy //
       this.checkCollisons();
 
@@ -112,7 +111,8 @@ class Game {
     loop(); // initial invocation
   }
 
-  checkCollisons() { // array of bullet / use foreach 
+  checkCollisons() {
+    // array of bullet / use foreach
     this.enemies.forEach((enemy) => {
       if (this.player.didCollide(enemy)) {
         this.player.removeLife();

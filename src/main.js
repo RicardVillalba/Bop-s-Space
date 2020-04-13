@@ -79,7 +79,14 @@ function createGameOverScreen(score) {
     <h3>Do you want to try again?</h3>
     <button>yes</button>
     <button>no</button>
+    <audio
+    autoplay
+    src="sound/stan-getz-spring-is-here.mp3">
+    Your browser does not support the
+    <code>audio</code> element.
+  </audio>
   </main>
+  
   `);
   var restartButton = gameOverScreen.querySelector("button");
   restartButton.addEventListener("click", startGame);
