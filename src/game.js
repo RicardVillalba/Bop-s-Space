@@ -23,14 +23,14 @@ class Game {
     this.scoreElement = this.gameScreen.querySelector(".score .value");
 
     //set the canvas dimensions
-    this.containerwidth = canvasContainer.clientWidth;
-    this.containerheight = canvasContainer.clientHeight;
+    this.containerWidth = canvasContainer.clientWidth;
+    this.containerHeight = canvasContainer.clientHeight;
 
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
 
-    this.player = new Player(this.canvas, 5);
-
+    this.player = new Player(this.canvas, 500);
+    console.log(this.player);
     // event listener for moving the player
     function handleKeyDown(event) {
       if (event.key === "ArrowUp") {
@@ -39,6 +39,12 @@ class Game {
       } else if (event.key === "ArrowDown") {
         //console.log("down");
         this.player.setDirection("down");
+      } else if (event.key === "ArrowLeft") {
+        //console.log("up");
+        this.player.setDirection("left");
+      } else if (event.key === "ArrowRight") {
+        //console.log("down");
+        this.player.setDirection("right");
       }
     }
     const boundHandleKeyDown = handleKeyDown.bind(this);
@@ -51,6 +57,8 @@ class Game {
   startLoop() {
     const loop = function () {
       //console.log("in loop");
+      //console.log(this.player.x);
+      //console.log(this.player.y);
 
       // update the state of player and enemies
       // create new enemies randomly
@@ -61,7 +69,10 @@ class Game {
 
         this.enemies.push(newEnemy);
       }
-      // check if player had hit any enemy
+      // create a new bullet
+
+
+      // check if player had hit any enemy //
       this.checkCollisons();
 
       // update the player position
@@ -101,7 +112,7 @@ class Game {
     loop(); // initial invocation
   }
 
-  checkCollisons() {
+  checkCollisons() { // array of bullet / use foreach 
     this.enemies.forEach((enemy) => {
       if (this.player.didCollide(enemy)) {
         this.player.removeLife();
@@ -124,8 +135,9 @@ class Game {
 
   updateGameStats() {
     //score
-    this.score + 5;
-    // console.log(this.score);
+    this.score += 5;
+
+    //console.log(this.score);
     this.livesElement.innerHTML = this.player.lives;
     this.scoreElement.innerHTML = this.score;
   }

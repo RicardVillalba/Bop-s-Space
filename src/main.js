@@ -15,6 +15,14 @@ function createSplashScreen() {
   splashScreen = buildDom(`
     <main class="splashscreen">
     <button class="newgame">New Game</button>
+
+    <div id="splashScreensound">
+      <iframe src="sound/bill-evans-trio-spring-is-here.mp3">
+      </iframe> 
+    </div>
+  
+      <img src="img/IMG_1547.PNG"></img> 
+   
     </main> 
    
 `);

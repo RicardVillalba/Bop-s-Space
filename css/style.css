@@ -40,27 +40,41 @@ body {
   
 }
 
+.splashscreen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  
+}
+
+
+
 .newgame {
 border: none;
-background-color: #353535;
+background-color: Transparent;
+background-repeat:no-repeat;
 font-size: 1.5rem;
 color: white;
 margin: 15%;
-
-
-
-
-
+background-image: url(img/IMG_1547.PNG);
 }
 
-.splashscreen {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-    
+img {
+  max-width: 150%;
+  max-height: 50%;
+  
 }
+.spaceship {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  height: 100%;
+  width: 100%;
+  border: silver;
+  }
+
+
 
 .lives {
 color: white;
@@ -72,3 +86,4 @@ font-family: Helvetica, sans-serif;
     font-family: Helvetica, sans-serif;
 }
 
+iframe{display:none;}
