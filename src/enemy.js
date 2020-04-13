@@ -12,7 +12,7 @@ class Enemy {
   }
 
   draw() {
-    this.ctx.fillStyle = "blue";
+    this.ctx.fillStyle = "white";
     this.ctx.fillRect(this.x, this.y, this.size, this.size);
     //this.ctx.drawImage(img, this.x, this.y, this.size, this.size * 2);
   }
