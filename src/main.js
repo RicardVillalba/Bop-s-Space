@@ -15,18 +15,14 @@ function createSplashScreen() {
   splashScreen = buildDom(`
     <main class="splashscreen">
     <button class="newgame">New Game</button>
-
-    <div id="splashScreensound">
-      <audio
+    
+    <audio
         autoplay
         src="sound/bill-evans-trio-spring-is-here.mp3">
         Your browser does not support the
         <code>audio</code> element.
-      </audio>
-    </div>
-  
-      <img src="img/IMG_1547.PNG"/>
-   
+    </audio>
+    <img src="img/IMG_1547.PNG"/>
     </main> 
    
 `);
@@ -46,6 +42,12 @@ function removeSplashScreen() {
 function createGameScreen() {
   gameScreen = buildDom(`
     <main class="game container">
+      <audio
+        autoplay
+        src="sound/lester-young-tea-for-two-1952.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
+     </audio>
        <header class="livesandscore">
            <div class="lives">
            <span class="label">lives:</span>
