@@ -50,6 +50,20 @@ class Game {
     const boundHandleKeyDown = handleKeyDown.bind(this);
     document.addEventListener("keydown", boundHandleKeyDown);
 
+    // eventlistener fo shooting
+    /* 
+     this.bullet = new Bullet(this.canvas, 5);
+    
+    // event listener shoot
+    function handleKeyDown(event) {
+      if (event.key === "s") {
+        //console.log("up");
+        this.bullet.setDirection("up");
+      } 
+    }
+    const boundHandleKeyDown = handleKeyDown.bind(this);
+    document.addEventListener("keydown", boundHandleKeyDown);
+    */
     //Starts  the canvas  request animation frame loop
     this.startLoop();
   }

@@ -18,7 +18,8 @@ class Bullet {
       }
     
       updatePosition() {
-        this.x = this.x + this.speed;
+        this.y = this.y + this.directionY * this.speed * 2;
+        this.x = this.x + this.directionX * this.speed * 2;
       }
     
       isInsideScreen() {
@@ -31,7 +32,35 @@ class Bullet {
         return playerRight < 0;
       }
 
-      removeEnemy() {
+      removeEnemy(enemy) {
+        const bulletLeft = this.x;
+        const bulletRight = this.x + this.size;
+        const bulletTop = this.y;
+        const bulletBottom = this.y + this.size;
+    
+        const enemyLeft = enemy.x;
+        const enemyRight = enemy.x + enemy.size;
+        const enemyTop = enemy.y;
+        const enemyBottom = enemy.y + enemy.size;
+    
+        const crossLeft = enemyLeft <= bulletRight && enemyLeft >= bulletLeft;
+        const crossRight = enemyRight >= bulletLeft && enemyRight <= bulletRight;
+    
+        const crossTop = enemyTop <= bulletBottom && enemyTop >= bulletTop;
+        const crossBottom = enemyBottom >= bulletTop && enemyBottom <= bulletBottom;
+    
+        if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+          return true;
+        } else {
+          return false;
+        }
+      } //true or false if player touch enemy
+
+      Shoot(direction) {
+        draw()
+      }
+
+
         
       }
-    }
+    

@@ -112,17 +112,20 @@ function endGame(score) {
 }
 
 function createCreditsScreen() {
-  gameOverScreen = buildDom(`
+  creditsScreen = buildDom(`
   <main>
-    <h2>tatata</h2>
-    <h3>tatati</h3>
-    <h1>See you space cowboy</h1>
-    <audio
-    autoplay
-    src="sound/see-you-space-cowboy.mp3">
-    Your browser does not support the
-    <code>audio</code> element.
-  </audio>
+  <div class="over">
+      <h2>tatata</h2>
+      <h3>tatati</h3>
+      <h1>See you space cowboy</h1>
+      </div>
+      <audio
+      autoplay
+      src="sound/see-you-space-cowboy.mp3">
+      Your browser does not support the
+      <code>audio</code> element.
+      </audio>
+  
   </main>
   
   `);
