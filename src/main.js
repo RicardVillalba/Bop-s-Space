@@ -77,8 +77,8 @@ function createGameOverScreen(score) {
     <h1>Game Over</h1>
     <p>Your score: <span> ${score} </span></p>
     <h3>Do you want to try again?</h3>
-    <button>yes</button>
-    <button>no</button>
+    <button class="newgame">yes</button>
+    <button class="newgame">no</button>
     <audio
     autoplay
     src="sound/stan-getz-spring-is-here.mp3">
@@ -109,6 +109,26 @@ function startGame() {
 function endGame(score) {
   removeScreen();
   createGameOverScreen(score);
+}
+
+function createCreditsScreen() {
+  gameOverScreen = buildDom(`
+  <main>
+    <h2>tatata</h2>
+    <h3>tatati</h3>
+    <h1>See you space cowboy</h1>
+    <audio
+    autoplay
+    src="sound/see-you-space-cowboy.mp3">
+    Your browser does not support the
+    <code>audio</code> element.
+  </audio>
+  </main>
+  
+  `);
+  var creditsButton = gameOverScreen.querySelector("button");
+  creditsButton.addEventListener("click", createCreditsScreen());
+  document.body.appendChild(gameOverScreen);
 }
 
 // Run the function createSplashScreen once all the resources are loaded.
