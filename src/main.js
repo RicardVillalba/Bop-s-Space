@@ -2,6 +2,7 @@ let game;
 let splashScreen;
 let gameScreen;
 let gameOverScreen;
+let creditsScreen
 
 function buildDom(htmlString) {
   const div = document.createElement("div");
@@ -22,7 +23,7 @@ function createSplashScreen() {
         Your browser does not support the
         <code>audio</code> element.
     </audio>
-    <img src="img/IMG_1547.PNG"/>
+    <img src="img/background_spaceship.png"/>
     </main> 
    
 `);
@@ -43,7 +44,7 @@ function createGameScreen() {
   gameScreen = buildDom(`
     <main class="game container">
       <audio
-        autoplay
+      <--!autoplay-->
         src="sound/lester-young-tea-for-two-1952.mp3">
         Your browser does not support the
         <code>audio</code> element.
@@ -74,22 +75,27 @@ function removeScreen() {
 function createGameOverScreen(score) {
   gameOverScreen = buildDom(`
   <main>
+    <div class="over">
     <h1>Game Over</h1>
     <p>Your score: <span> ${score} </span></p>
     <h3>Do you want to try again?</h3>
-    <button class="newgame">yes</button>
-    <button class="newgame">no</button>
+    <button id="restart-button">yes</button>
+    <button id="credits-button">no</button>
+    </div>
     <audio
-    autoplay
+    <--!autoplay-->
     src="sound/stan-getz-spring-is-here.mp3">
     Your browser does not support the
     <code>audio</code> element.
   </audio>
   </main>
-  
   `);
-  var restartButton = gameOverScreen.querySelector("button");
+  var restartButton = gameOverScreen.querySelector("#restart-button");
   restartButton.addEventListener("click", startGame);
+
+  var creditsButton = gameOverScreen.querySelector("#credits-button");
+  creditsButton.addEventListener("click", createCreditsScreen);
+
   document.body.appendChild(gameOverScreen);
 }
 
@@ -112,6 +118,7 @@ function endGame(score) {
 }
 
 function createCreditsScreen() {
+  removeScreen();
   creditsScreen = buildDom(`
   <main>
   <div class="over">
@@ -119,7 +126,7 @@ function createCreditsScreen() {
       <h3>tatati</h3>
       </div>
       <audio
-      autoplay
+      <--!autoplay-->
       src="sound/see-you-space-cowboy.mp3">
       Your browser does not support the
       <code>audio</code> element.
@@ -128,9 +135,8 @@ function createCreditsScreen() {
   </main>
   
   `);
-  var creditsButton = gameOverScreen.querySelector("button");
-  creditsButton.addEventListener("click", createCreditsScreen());
-  document.body.appendChild(gameOverScreen);
+ 
+  document.body.appendChild(creditsScreen);
 }
 
 // Run the function createSplashScreen once all the resources are loaded.

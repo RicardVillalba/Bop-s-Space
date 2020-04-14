@@ -9,6 +9,8 @@ class Game {
     this.gameScreen = null;
     this.canvas = null;
     this.ctx = null;
+    this.shoot = false;
+    this.bullets = [];
   }
 
   //initiate the player, set the canvas and start the canvas loop
@@ -46,6 +48,12 @@ class Game {
         //console.log("down");
         this.player.setDirection("right");
       }
+      
+      if (event.key === "s") {
+        //console.log("shooting");
+
+        this.shoot = true;
+      }
     }
     const boundHandleKeyDown = handleKeyDown.bind(this);
     document.addEventListener("keydown", boundHandleKeyDown);
@@ -56,10 +64,7 @@ class Game {
     
     // event listener shoot
     function handleKeyDown(event) {
-      if (event.key === "s") {
-        //console.log("up");
-        this.bullet.setDirection("up");
-      } 
+   
     }
     const boundHandleKeyDown = handleKeyDown.bind(this);
     document.addEventListener("keydown", boundHandleKeyDown);
@@ -83,14 +88,27 @@ class Game {
 
         this.enemies.push(newEnemy);
       }
-      // create a new bullet
 
+      if (this.shoot) {
+        //create the bullet
+        const newBullet = new Bullet(this.canvas, 5, this.player.y);
+        //add the bullet to a property (this.bullet)
+        this.bullets.push(newBullet);
+        console.log(this.bullets);
+        //reset the triger (this.shoot)
+        this.shoot = false;
+      }
       // check if player had hit any enemy //
       this.checkCollisons();
 
       // update the player position
       this.player.handleScreenCollision();
       this.player.updatePosition();
+
+      //update bullet position
+
+      // check is bullet collides with enemies
+      //this.removeEnemy(enemy)
 
       // move all enemies
       // check if enemy is out of screen
@@ -103,6 +121,23 @@ class Game {
 
       this.enemies = enemiesOnScreen;
 
+
+
+      // move all bullets
+      // check if bullet is out of screen
+      /// the promebl
+      const bulletsOnScreen = this.bullets.filter(function (bullet) {
+        console.log(bullet);
+        bullet.updatePosition();
+        console.log(bullet);
+        const isInsideScreen = bullet.isInsideScreen();
+
+        return isInsideScreen;
+      });
+
+      this.bullets = bulletsOnScreen;
+
+
       // clear the canvas
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -112,6 +147,9 @@ class Game {
       // draw the enemies
       this.enemies.forEach((enemy) => {
         enemy.draw();
+      });
+      this.bullets.forEach((bullet) => {
+        bullet.draw();
       });
 
       // terminate the loop if game is over
@@ -135,7 +173,7 @@ class Game {
         enemy.x = -1 * enemy.size;
 
         if (this.player.lives <= 0) {
-          this.gameOver();
+          this.gameOver(this.score);
         }
       }
     });
@@ -144,7 +182,7 @@ class Game {
   gameOver(score) {
     //don't accept this.score
     this.gameIsOver = true;
-    endGame();
+    endGame(score);
   }
 
   updateGameStats() {
