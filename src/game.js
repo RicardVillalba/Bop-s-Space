@@ -173,11 +173,11 @@ class Game {
 
         enemy.x = -1 * enemy.size;
       //bullet collisons
-      else if (bullets.length > 0) {
+      /*else if (bullets.length > 0) {
         for (i = 0; i < bullets.length; i++) {
             this.(i).didCollide(enemy);
         }
-    }
+    }*/
 
 
         ///////////////////////////////////////

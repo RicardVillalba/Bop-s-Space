@@ -83,12 +83,15 @@ img {
   font-size: 80%;
 }
 
+
 .over {
   width: 100%;
-  height: 80%;
+  height: 100%;
   display: flex;
-  align-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: 'couturebold';
   color: white;
-  font-size: 30%;
+  font-size: 100%;
+  justify-content: center;
 }

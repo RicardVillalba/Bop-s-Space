@@ -2,7 +2,7 @@ let game;
 let splashScreen;
 let gameScreen;
 let gameOverScreen;
-let creditsScreen
+let creditsScreen;
 
 function buildDom(htmlString) {
   const div = document.createElement("div");
@@ -74,7 +74,7 @@ function removeScreen() {
 // game over screen
 function createGameOverScreen(score) {
   gameOverScreen = buildDom(`
-  <main>
+  <main class>
     <div class="over">
     <h1>Game Over</h1>
     <p>Your score: <span> ${score} </span></p>
@@ -135,7 +135,7 @@ function createCreditsScreen() {
   </main>
   
   `);
- 
+
   document.body.appendChild(creditsScreen);
 }
 
