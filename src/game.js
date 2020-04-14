@@ -91,7 +91,7 @@ class Game {
 
       if (this.shoot) {
         //create the bullet
-        const newBullet = new Bullet(this.canvas, 5, this.player.y);
+        const newBullet = new Bullet(this.canvas, 5, this.player.x,this.player.y);
         //add the bullet to a property (this.bullet)
         this.bullets.push(newBullet);
         console.log(this.bullets);
@@ -151,6 +151,7 @@ class Game {
       this.bullets.forEach((bullet) => {
         bullet.draw();
       });
+      //
 
       // terminate the loop if game is over
 
@@ -171,7 +172,15 @@ class Game {
         console.log("player lives", this.player.lives);
 
         enemy.x = -1 * enemy.size;
+      //bullet collisons
+      else if (bullets.length > 0) {
+        for (i = 0; i < bullets.length; i++) {
+            this.(i).didCollide(enemy);
+        }
+    }
 
+
+        ///////////////////////////////////////
         if (this.player.lives <= 0) {
           this.gameOver(this.score);
         }

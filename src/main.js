@@ -44,7 +44,7 @@ function createGameScreen() {
   gameScreen = buildDom(`
     <main class="game container">
       <audio
-      <--!autoplay-->
+      autoplay
         src="sound/lester-young-tea-for-two-1952.mp3">
         Your browser does not support the
         <code>audio</code> element.
@@ -83,7 +83,7 @@ function createGameOverScreen(score) {
     <button id="credits-button">no</button>
     </div>
     <audio
-    <--!autoplay-->
+    autoplay
     src="sound/stan-getz-spring-is-here.mp3">
     Your browser does not support the
     <code>audio</code> element.
@@ -126,7 +126,7 @@ function createCreditsScreen() {
       <h3>tatati</h3>
       </div>
       <audio
-      <--!autoplay-->
+      autoplay
       src="sound/see-you-space-cowboy.mp3">
       Your browser does not support the
       <code>audio</code> element.

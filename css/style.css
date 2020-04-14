@@ -58,7 +58,7 @@ body {
   border: none;
   background-color: Transparent;
   background-repeat: no-repeat;
-  font-size: 1.5rem;
+  font-size: 90%;
   color: white;
   margin-bottom: 8%;
   margin-right: 8%;
@@ -73,12 +73,14 @@ img {
 
 .lives {
   color: white;
-  font-family: Helvetica, sans-serif;
+  font-family: 'couturebold';
+  font-size: 80%;
 }
 
 .score {
   color: white;
-  font-family: Helvetica, sans-serif;
+  font-family: 'couturebold';
+  font-size: 80%;
 }
 
 .over {
@@ -87,4 +89,6 @@ img {
   display: flex;
   align-content: center;
   font-family: 'couturebold';
+  color: white;
+  font-size: 30%;
 }
