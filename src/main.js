@@ -121,7 +121,7 @@ function createCreditsScreen() {
   removeScreen();
   creditsScreen = buildDom(`
   <main>
-  <div class="over">
+  <div class="credits">
       <h2>tatata</h2>
       <h3>tatati</h3>
       </div>

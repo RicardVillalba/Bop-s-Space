@@ -52,8 +52,8 @@ class Bullet {
 
     const crossTop = enemyTop <= bulletBottom && enemyTop >= bulletTop;
     const crossBottom = enemyBottom >= bulletTop && enemyBottom <= bulletBottom;
-
-    if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+    const crossInside = bulletTop >= enemyTop && bulletBottom <= enemyBottom;
+    if ((crossLeft || crossRight) && (crossTop || crossBottom || crossInside)) {
       return true;
     } else {
       return false;

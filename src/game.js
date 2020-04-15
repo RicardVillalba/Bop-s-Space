@@ -31,7 +31,7 @@ class Game {
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
 
-    this.player = new Player(this.canvas, 3);
+    this.player = new Player(this.canvas, 100);
     console.log(this.player);
     // event listener for moving the player
     function handleKeyDown(event) {
@@ -48,7 +48,7 @@ class Game {
         //console.log("down");
         this.player.setDirection("right");
       }
-      
+
       if (event.key === "s") {
         //console.log("shooting");
 
@@ -83,7 +83,7 @@ class Game {
       // create new enemies randomly
       if (Math.random() > 0.96) {
         const randomHeighPos = this.canvas.height * Math.random();
-        const newEnemy = new Enemy(this.canvas, randomHeighPos, 5);
+        const newEnemy = new Enemy(this.canvas, randomHeighPos, 1);
         //console.log("enemy");
 
         this.enemies.push(newEnemy);
@@ -91,7 +91,12 @@ class Game {
 
       if (this.shoot) {
         //create the bullet
-        const newBullet = new Bullet(this.canvas, 5, this.player.x,this.player.y);
+        const newBullet = new Bullet(
+          this.canvas,
+          5,
+          this.player.x,
+          this.player.y
+        );
         //add the bullet to a property (this.bullet)
         this.bullets.push(newBullet);
         console.log(this.bullets);
@@ -121,8 +126,6 @@ class Game {
 
       this.enemies = enemiesOnScreen;
 
-
-
       // move all bullets
       // check if bullet is out of screen
       /// the promebl
@@ -136,7 +139,6 @@ class Game {
       });
 
       this.bullets = bulletsOnScreen;
-
 
       // clear the canvas
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -172,20 +174,28 @@ class Game {
         console.log("player lives", this.player.lives);
 
         enemy.x = -1 * enemy.size;
-      //bullet collisons
-      /*else if (bullets.length > 0) {
-        for (i = 0; i < bullets.length; i++) {
-            this.(i).didCollide(enemy);
-        }
-    }*/
 
-
-        ///////////////////////////////////////
         if (this.player.lives <= 0) {
           this.gameOver(this.score);
         }
       }
-    });
+      //bullet collisons
+      if (this.bullets.length > 0) {
+        this.bullets.forEach(function (bullet) {
+          bullet.didCollide(enemy);
+            
+          if (bullet.didCollide(enemy)) {
+            enemy.x = -1 * enemy.size;
+            bullet.x = this.canvas.with + bullet.sizeWidth;
+            console.log("works");
+          }
+        },this);
+
+        //array.forEach(function(currentValue, index, arr), thisValue)
+      }
+
+      ///////////////////////////////////////
+    },this);
   }
 
   gameOver(score) {
