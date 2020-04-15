@@ -31,8 +31,8 @@ class Game {
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
 
-    this.player = new Player(this.canvas, 1);
-    console.log(this.player);
+    this.player = new Player(this.canvas, 500);
+    console.log(this.player.image);
     // event listener for moving the player
     function handleKeyDown(event) {
       if (event.key === "ArrowUp") {
@@ -146,6 +146,7 @@ class Game {
       // paint the canvas
       // draw the player
       this.player.draw();
+      //console.log(this.player.);
       // draw the enemies
       this.enemies.forEach((enemy) => {
         enemy.draw();

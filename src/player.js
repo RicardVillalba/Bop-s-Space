@@ -27,7 +27,7 @@ class Player {
     this.screenRight = this.canvas.width;
 
     this.image = new Image();
-    this.image.src = "img/player-sprite_opt.png";
+    this.image.src = "img/player-sprite.png";
   }
 
   setDirection(direction) {
