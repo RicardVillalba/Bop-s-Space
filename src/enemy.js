@@ -5,7 +5,7 @@ class Enemy {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
 
-    this.size = 25;
+    this.size = 100;
     this.x = this.canvas.width + this.size;
     this.y = y;
     this.speed = speed;

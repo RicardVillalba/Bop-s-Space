@@ -74,13 +74,15 @@ function removeScreen() {
 // game over screen
 function createGameOverScreen(score) {
   gameOverScreen = buildDom(`
-  <main class>
+  <main class="credits">
     <div class="over">
     <h1>Game Over</h1>
     <p>Your score: <span> ${score} </span></p>
     <h3>Do you want to try again?</h3>
-    <button id="restart-button">yes</button>
-    <button id="credits-button">no</button>
+      <div class="gameOverButtons">
+      <button id="restart-button">yes</button>
+      <button id="credits-button">no</button>
+      </div>
     </div>
     <audio
     autoplay
@@ -120,7 +122,7 @@ function endGame(score) {
 function createCreditsScreen() {
   removeScreen();
   creditsScreen = buildDom(`
-  <main>
+  <main class="credits">
   <div class="credits">
       <h2>tatata</h2>
       <h3>tatati</h3>

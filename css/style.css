@@ -1,9 +1,8 @@
 @font-face {
-  font-family: 'couturebold';
-  src: url("./../fonts/couture-bld-webfont.woff2") format('woff2');
+  font-family: "couturebold";
+  src: url("./../fonts/couture-bld-webfont.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-
 }
 html,
 body {
@@ -11,13 +10,11 @@ body {
   width: 100%;
   background-color: #353535;
   overflow: hidden;
- 
 }
 
 .container {
   margin: 0 20px;
   background-color: #353535;
-  
 }
 
 /*components*/
@@ -30,16 +27,16 @@ body {
 }
 
 .game header {
-  font-family: 'couturebold';
+  font-family: "couturebold";
   height: 50px;
   display: flex;
   align-items: center;
-  font-family: 'couturebold';
+  font-family: "couturebold";
 }
 
 .game .lives {
   flex: 0.7;
-  font-family: 'couturebold';
+  font-family: "couturebold";
 }
 
 .canvas-container {
@@ -62,7 +59,7 @@ body {
   color: white;
   margin-bottom: 8%;
   margin-right: 8%;
-  font-family: 'couturebold';
+  font-family: "couturebold";
 }
 
 img {
@@ -73,16 +70,15 @@ img {
 
 .lives {
   color: white;
-  font-family: 'couturebold';
+  font-family: "couturebold";
   font-size: 80%;
 }
 
 .score {
   color: white;
-  font-family: 'couturebold';
+  font-family: "couturebold";
   font-size: 80%;
 }
-
 
 .over {
   width: 100%;
@@ -90,7 +86,7 @@ img {
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: 'couturebold';
+  font-family: "couturebold";
   color: white;
   font-size: 100%;
   justify-content: center;
@@ -102,9 +98,36 @@ img {
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-family: 'couturebold';
+  font-family: "couturebold";
   color: white;
   font-size: 100%;
   justify-content: center;
 }
 
+#restart-button {
+  border: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  font-size: 85%;
+  color: white;
+  margin-right: 3%;
+  font-family: "couturebold";
+}
+
+#credits-button {
+  border: none;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  font-size: 85%;
+  margin-left: 3%;
+  color: white;
+
+  font-family: "couturebold";
+}
+
+.gameOverButtons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

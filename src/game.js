@@ -31,7 +31,7 @@ class Game {
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
 
-    this.player = new Player(this.canvas, 100);
+    this.player = new Player(this.canvas, 1);
     console.log(this.player);
     // event listener for moving the player
     function handleKeyDown(event) {
