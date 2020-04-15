@@ -47,25 +47,26 @@ body {
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: flex-end;
-  flex-direction: row-reverse;
 }
 
 .newgame {
   border: none;
   background-color: Transparent;
   background-repeat: no-repeat;
-  font-size: 90%;
+  font-size: 100%;
   color: white;
-  margin-bottom: 8%;
-  margin-right: 8%;
+  margin-right: 15%;
   font-family: "couturebold";
 }
 
 img {
   max-width: 80%;
   max-height: 100%;
-  margin-bottom: 5%;
+  margin-right: 10%;
+  margin-bottom: 10%;
 }
 
 .lives {

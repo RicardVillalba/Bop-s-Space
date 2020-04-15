@@ -95,7 +95,7 @@ class Game {
           this.canvas,
           5,
           this.player.x,
-          this.player.y
+          (this.player.y) + (this.player.size/2) 
         );
         //add the bullet to a property (this.bullet)
         this.bullets.push(newBullet);

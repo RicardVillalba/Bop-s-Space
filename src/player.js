@@ -6,7 +6,8 @@ class Player {
     this.ctx = this.canvas.getContext("2d");
 
     this.lives = lives;
-    this.size = 300;
+    this.size = 100;
+    //this.imagescale= 1/1;
     this.x = 50;
     this.y = this.canvas.height / 2;
 
@@ -26,7 +27,7 @@ class Player {
     this.screenRight = this.canvas.width;
 
     this.image = new Image();
-    this.image.src = "img/player-sprite.png";
+    this.image.src = "img/player-sprite_opt.png";
   }
 
   setDirection(direction) {
@@ -84,7 +85,7 @@ class Player {
   }
 
   draw() {
-    this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
+    this.ctx.drawImage(this.image, this.x, this.y, this.size /** this.imagescale*/, this.size);
 
     //this.ctx.fillStyle = "white";
     // ctx.fillRect (x , y, with, height)
