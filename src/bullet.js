@@ -15,7 +15,7 @@ class Bullet {
   }
 
   draw() {
-    console.log("img", this.image);
+    //console.log("img", this.image);
     this.ctx.drawImage(
       this.image,
       this.x,

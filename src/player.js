@@ -85,7 +85,7 @@ class Player {
   }
 
   draw() {
-    this.ctx.drawImage(this.image, this.x, this.y, this.size /** this.imagescale*/, this.size);
+    this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
 
     //this.ctx.fillStyle = "white";
     // ctx.fillRect (x , y, with, height)
