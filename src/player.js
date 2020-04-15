@@ -6,7 +6,7 @@ class Player {
     this.ctx = this.canvas.getContext("2d");
 
     this.lives = lives;
-    this.size = 30;
+    this.size = 60;
     this.x = 50;
     this.y = this.canvas.height / 2;
 
@@ -24,6 +24,9 @@ class Player {
     this.playerRight = this.x + this.size;
     this.screenLeft = 0; // y = 0
     this.screenRight = this.canvas.width;
+
+    this.image = new Image();
+    this.image.src = "img/player-sprite.png";
   }
 
   setDirection(direction) {
@@ -81,10 +84,11 @@ class Player {
   }
 
   draw() {
-    this.ctx.fillStyle = "white";
+    this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
 
+    //this.ctx.fillStyle = "white";
     // ctx.fillRect (x , y, with, height)
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    //this.ctx.fillRect(this.x, this.y, this.size, this.size);
   }
 
   didCollide(enemy) {

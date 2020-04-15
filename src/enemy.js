@@ -5,15 +5,26 @@ class Enemy {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext("2d");
 
-    this.size = 50;
+    this.size = 25;
     this.x = this.canvas.width + this.size;
     this.y = y;
     this.speed = speed;
+    this.image = new Image();
+    this.image.src = "img/enemy-sprite.png";
   }
 
   draw() {
-    this.ctx.fillStyle = "white";
-    this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    console.log("img", this.image);
+    this.ctx.drawImage(
+      this.image,
+      this.x,
+      this.y,
+      this.size,
+      this.size
+    );
+
+    //this.ctx.fillStyle = "white";
+    //this.ctx.fillRect(this.x, this.y, this.size, this.size);
     //this.ctx.drawImage(img, this.x, this.y, this.size, this.size * 2);
   }
 
