@@ -141,8 +141,8 @@ main.credits {
 }
 
 .seeyou {
-  width: 50%;
-  height: 40%;
+  width: 40%;
+  height: 50%;
   display: flex;
   align-items: flex-end;
   flex-direction: row;
@@ -151,11 +151,15 @@ main.credits {
   font-size: 100%;
   justify-content: flex-start;
   animation-name: seeAnimation;
-  animation-duration: 5s;
+  animation-duration: 50s;
+  margin-right: 7%;
 }
 
 .see {
-  width: 100%;
+  width: 80%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 0%;
 }
 
 .animatedCredits {
@@ -168,15 +172,16 @@ main.credits {
   flex-wrap: wrap;
   justify-content: flex-start;
   animation-name: animatedCredit;
-  animation-duration: 60s;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes animatedCredit {
   0% {
-    margin-top: 140%;
+    margin-top: 210%;
   }
   100% {
-    margin-bottom: calc(0% + 2700px);
+    margin-bottom: calc(0% + 5200px);
   }
 }
 

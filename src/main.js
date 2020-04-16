@@ -13,7 +13,6 @@ function buildDom(htmlString) {
 
 // splash screen
 function createSplashScreen() {
-  
   splashScreen = buildDom(`
     <main class="splashscreen">
     <button class="newgame">New Game</button>
@@ -30,7 +29,8 @@ function createSplashScreen() {
 `);
 
   document.body.appendChild(splashScreen);
-  
+  let music = document.querySelector("audio");
+  music.volume = 0.2;
 
   const startButton = splashScreen.querySelector("button");
   startButton.addEventListener("click", function () {
@@ -69,6 +69,8 @@ function createGameScreen() {
     `);
   //
   document.body.appendChild(gameScreen);
+  let music = document.querySelector("audio");
+  music.volume = 0.2;
 }
 
 function removeScreen() {
@@ -103,6 +105,8 @@ function createGameOverScreen(score) {
   creditsButton.addEventListener("click", createCreditsScreen);
 
   document.body.appendChild(gameOverScreen);
+  let music = document.querySelector("audio");
+  music.volume = 0.2;
 }
 
 function removeGameOverScreen() {}
@@ -125,7 +129,7 @@ function endGame(score) {
 
 function createCreditsScreen() {
   removeScreen();
-  
+
   creditsScreen = buildDom(`
   <main class="credits">
   <div class="animatedCredits">
@@ -140,6 +144,9 @@ function createCreditsScreen() {
       <h4>Ricard Villalba</h4>
       <h3>Art</h3>
       <h4>Ricard Villalba</h4>
+      <h3>Sound</h3>
+      <h4>Ricard Villalba</h4>
+      <h4> </h4>
       <h3>Music</h3>
       <h3>Spring is here</h3>
       <h4>Bill Evans (piano)</h4>
@@ -158,13 +165,52 @@ function createCreditsScreen() {
       <h3>The Real Folk Blues</h3>
       <h4>Yoko Kanno (composer)</h4>
       <h4>Mai Yamane (vocals)</h4>
-      <h4>Yūho Iwasato (lyrics)</h4>
+      <h4>Yuho Iwasato (lyrics)</h4>
       <h3>Beta testers</h3>
+      <h4>R. Villalba</h4>
+      <h4>Imma Burrull</h4>
+      <h4>Julia Villalba</h4>
       <h4>Ramon Quesada</h4>
       <h4>Ferran Calpe</h4>
-      <h4>Gabriel Espin</h4>
+      <h4>G. Espin</h4>
       <h4>Ferran Pelayo</h4>
       <h4>David Perez</h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
+      <h4> </h4>
       <h4> </h4>
       <h1>Thank you for playing</h1>
       </div>
@@ -183,7 +229,8 @@ function createCreditsScreen() {
   `);
 
   document.body.appendChild(creditsScreen);
-  
+  let music = document.querySelector("audio");
+  music.volume = 0.4;
 }
 
 // Run the function createSplashScreen once all the resources are loaded.
