@@ -178,7 +178,7 @@ main.credits {
 
 @keyframes animatedCredit {
   0% {
-    margin-top: 210%;
+    margin-top: 230%;
   }
   100% {
     margin-bottom: calc(0% + 5200px);
