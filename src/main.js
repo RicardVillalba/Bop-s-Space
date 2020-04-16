@@ -123,10 +123,14 @@ function createCreditsScreen() {
   removeScreen();
   creditsScreen = buildDom(`
   <main class="credits">
-  <div class="credits">
+  <div class="animatedCredits">
       <h2>tatata</h2>
       <h3>tatati</h3>
       </div>
+      <div class="seeyou">
+      <img clas="see" src="img/see_you_space_cowboy.png"/>
+      </div>
+      
       <audio
       autoplay
       src="sound/see-you-space-cowboy.mp3">

@@ -132,3 +132,28 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+.seeyou {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  font-family: "couturebold";
+  color: white;
+  font-size: 100%;
+  justify-content: flex-end;
+}
+
+.see {
+  width: 50%;
+}
+
+@keyframes animatedCredits {
+  0% {
+    margin-top: 100%;
+  }
+  100% {
+    margin-bottom: calc(0% + 500px);
+  }
+}
