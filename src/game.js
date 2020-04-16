@@ -30,7 +30,8 @@ class Game {
 
     this.canvas.width = this.containerWidth;
     this.canvas.height = this.containerHeight;
-
+    this.gameScreen.querySelector("audio").loop = true;
+   
     this.player = new Player(this.canvas, 5);
     console.log(this.player.image);
     // event listener for moving the player
@@ -49,7 +50,7 @@ class Game {
         this.player.setDirection("right");
       }
 
-      if (event.key === "s") {
+      if (event.key === " ") {
         //console.log("shooting");
 
         this.shoot = true;
@@ -58,17 +59,7 @@ class Game {
     const boundHandleKeyDown = handleKeyDown.bind(this);
     document.addEventListener("keydown", boundHandleKeyDown);
 
-    // eventlistener fo shooting
-    /* 
-     this.bullet = new Bullet(this.canvas, 5);
-    
-    // event listener shoot
-    function handleKeyDown(event) {
    
-    }
-    const boundHandleKeyDown = handleKeyDown.bind(this);
-    document.addEventListener("keydown", boundHandleKeyDown);
-    */
     //Starts  the canvas  request animation frame loop
     this.startLoop();
   }
@@ -83,7 +74,7 @@ class Game {
       // create new enemies randomly
       if (Math.random() > 0.96) {
         const randomHeighPos = this.canvas.height * Math.random();
-        const newEnemy = new Enemy(this.canvas, randomHeighPos, 1);
+        const newEnemy = new Enemy(this.canvas, randomHeighPos, 3);
         //console.log("enemy");
 
         this.enemies.push(newEnemy);

@@ -13,6 +13,7 @@ function buildDom(htmlString) {
 
 // splash screen
 function createSplashScreen() {
+  
   splashScreen = buildDom(`
     <main class="splashscreen">
     <button class="newgame">New Game</button>
@@ -27,7 +28,9 @@ function createSplashScreen() {
     </main> 
    
 `);
+
   document.body.appendChild(splashScreen);
+  
 
   const startButton = splashScreen.querySelector("button");
   startButton.addEventListener("click", function () {
@@ -64,6 +67,7 @@ function createGameScreen() {
        </div>
    </main> 
     `);
+  //
   document.body.appendChild(gameScreen);
 }
 
@@ -121,16 +125,52 @@ function endGame(score) {
 
 function createCreditsScreen() {
   removeScreen();
+  
   creditsScreen = buildDom(`
   <main class="credits">
   <div class="animatedCredits">
-      <h2>tatata</h2>
-      <h3>tatati</h3>
+      <h3>Developer</h3>
+      <h4>Ricard Villalba</h4>
+      <h3>Quality assurance</h3>
+      <h4>Uros</h4>
+      <h4>Capu</h4>
+      <h3>Concept Work</h3>
+      <h4>Ricard Villalba</h4>
+      <h3>Design</h3>
+      <h4>Ricard Villalba</h4>
+      <h3>Art</h3>
+      <h4>Ricard Villalba</h4>
+      <h3>Music</h3>
+      <h3>Spring is here</h3>
+      <h4>Bill Evans (piano)</h4>
+      <h4>Scott LaFaro (bass)</h4>
+      <h4>Paul Motian (drums)</h4>
+      <h3>Tea for two</h3>
+      <h4>Lester Young (tenor saxophone)</h4>
+      <h4>Barney Kessel (guitar)</h4>
+      <h4>Ray Brown (bass)</h4>
+      <h4>J.C.Heard (drums)</h4>
+      <h3>Spring is here</h3>
+      <h4>Stan Getz (tenor saxophone)</h4>
+      <h4>Jim McNeely (piano)</h4>
+      <h4>Marc Johnson (bass)</h4>
+      <h4>Billy Hart (drums)</h4>
+      <h3>The Real Folk Blues</h3>
+      <h4>Yoko Kanno (composer)</h4>
+      <h4>Mai Yamane (vocals)</h4>
+      <h4>Yūho Iwasato (lyrics)</h4>
+      <h3>Beta testers</h3>
+      <h4>Ramon Quesada</h4>
+      <h4>Ferran Calpe</h4>
+      <h4>Gabriel Espin</h4>
+      <h4>Ferran Pelayo</h4>
+      <h4>David Perez</h4>
+      <h4> </h4>
+      <h1>Thank you for playing</h1>
       </div>
       <div class="seeyou">
       <img clas="see" src="img/see_you_space_cowboy.png"/>
       </div>
-      
       <audio
       autoplay
       src="sound/see-you-space-cowboy.mp3">
@@ -143,6 +183,7 @@ function createCreditsScreen() {
   `);
 
   document.body.appendChild(creditsScreen);
+  
 }
 
 // Run the function createSplashScreen once all the resources are loaded.

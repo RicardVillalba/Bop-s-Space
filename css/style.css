@@ -133,8 +133,15 @@ img {
   align-items: center;
 }
 
-.seeyou {
+main.credits {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.seeyou {
+  width: 50%;
   height: 40%;
   display: flex;
   align-items: flex-end;
@@ -142,18 +149,42 @@ img {
   font-family: "couturebold";
   color: white;
   font-size: 100%;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  animation-name: seeAnimation;
+  animation-duration: 5s;
 }
 
 .see {
-  width: 50%;
+  width: 100%;
 }
 
-@keyframes animatedCredits {
+.animatedCredits {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 70%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  animation-name: animatedCredit;
+  animation-duration: 60s;
+}
+
+@keyframes animatedCredit {
   0% {
-    margin-top: 100%;
+    margin-top: 140%;
   }
   100% {
-    margin-bottom: calc(0% + 500px);
+    margin-bottom: calc(0% + 2700px);
+  }
+}
+
+@keyframes seeanimation {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
   }
 }
